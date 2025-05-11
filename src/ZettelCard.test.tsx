@@ -54,6 +54,23 @@ describe("ZettelCard Component", () => {
     expect(screen.getByText("Additional Test Content")).toBeInTheDocument();
   });
 
+  it("applies custom styles to the header", () => {
+    const customHeaderStyle = { backgroundColor: "blue" };
+    render(
+      <ZettelCard
+        uniqueId="12345"
+        title="Test Title"
+        headerStyle={customHeaderStyle}
+      >
+        <p>Test Content</p>
+      </ZettelCard>
+    );
+
+    // Check if the header has the custom style
+    const header = screen.getByText("Test Title").closest(".zettelCardHeader");
+    expect(header).toHaveStyle("background-color: blue");
+  });
+
   it("renders children content correctly", () => {
     render(
       <ZettelCard uniqueId="12345" title="Test Title">
@@ -128,5 +145,25 @@ describe("ZettelCard Component", () => {
 
     // Check if the uniqueId is rendered
     expect(screen.getByText("12345")).toBeInTheDocument();
+  });
+
+  it("applies custom styles to the footer", () => {
+    const customFooterStyle = { backgroundColor: "lightcoral" };
+    render(
+      <ZettelCard
+        uniqueId="12345"
+        title="Test Title"
+        footerStyle={customFooterStyle}
+        cardFooterChildren={[<div key="1">Footer Content</div>]}
+      >
+        <p>Test Content</p>
+      </ZettelCard>
+    );
+
+    // Check if the footer has the custom style
+    const footer = screen
+      .getByText("Footer Content")
+      .closest(".zettelCardFooter");
+    expect(footer).toHaveStyle("background-color: lightcoral");
   });
 });
