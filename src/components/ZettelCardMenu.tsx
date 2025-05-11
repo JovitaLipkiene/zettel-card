@@ -8,11 +8,10 @@ export interface ZettelCardMenuProps {
 
 export const ZettelCardMenu: React.FC<ZettelCardMenuProps> = (props) => {
   const { isVisible, menuStyle, children } = props;
+  if (!isVisible) return null;
+
   return (
-    <div
-      className="zettelCardMenu"
-      style={{ ...menuStyle, visibility: isVisible ? "visible" : "hidden" }}
-    >
+    <div className="zettelCardMenu" style={menuStyle}>
       {children && <>{children}</>}
     </div>
   );
