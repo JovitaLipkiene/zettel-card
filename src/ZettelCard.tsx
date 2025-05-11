@@ -40,7 +40,11 @@ export const ZettelCard: React.FC<ZettelCardProps> = (props) => {
   };
 
   return (
-    <div className="zettelCardContainer" style={cardContainerStyle}>
+    <div
+      className="zettelCardContainer"
+      style={cardContainerStyle}
+      data-testid="zettel-card-container"
+    >
       <div style={{ position: "relative" }}>
         <ZettelCardHeader
           uniqueId={uniqueId}
