@@ -1,5 +1,5 @@
 {
-  "name": "@jovita-li/zettel-card",
+  "name": "@jovita-li/zettelkasten-card",
   "version": "1.0.0",
   "description": "Card for Zettelkasten notes",
   "main": "lib/index.esm.js",
@@ -9,6 +9,12 @@
       "types": "./lib/types/index.d.ts"
     }
   },
+  "files": [
+    "lib",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "rollup -c",
     "test": "jest",
