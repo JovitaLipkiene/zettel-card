@@ -10,6 +10,7 @@ export default {
       format: "esm",
     },
   ],
+  external: ["react", "react-dom"], // Mark react and react-dom as external
   plugins: [
     typescript({ useTsconfigDeclarationDir: true }),
     del({ targets: ["lib/*"] }),
