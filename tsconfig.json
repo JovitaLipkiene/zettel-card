@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "declaration": true,
+    "declarationDir": "lib/types",
+    "target": "ES6",
+    "moduleResolution": "node"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "lib"],
+  "jsx": "react"
+}

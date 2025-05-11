@@ -1,0 +1,52 @@
+.zettelCardContainer {
+  position: relative;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 4px;
+  text-align: left;
+}
+
+.zettelCardHeader {
+  display: inline-block;
+  text-align: left;
+}
+
+.zettelCardHeaderChildrenContainer {
+  padding-left: 5px;
+}
+
+.zettelCardMenuButton {
+  position: absolute;
+  font-size: bold;
+  right: 0;
+  width: 20px;
+  text-align: center;
+}
+
+.zettelCardMenuButton:hover {
+  background-color: #dfdede;
+  cursor: pointer;
+}
+
+.zettelCardHeaderUniqueId {
+  padding-right: 5px;
+}
+
+.zettelCardHeaderTitle {
+  font-weight: bold;
+}
+
+.zettelCardContent {
+  min-height: 100px;
+  text-align: left;
+}
+
+.zettelCardMenu {
+  min-width: 30px;
+  border: 1px solid #ccc;
+  background-color: white;
+  position: absolute;
+  right: 4px;
+  top: 28px;
+  text-align: center;
+}
