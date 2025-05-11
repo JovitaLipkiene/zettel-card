@@ -38,6 +38,8 @@ export const ZettelCard: React.FC<ZettelCardProps> = (props) => {
     cardHeaderProps,
     cardFooterProps,
     cardMenuProps,
+    headerStyle,
+    footerStyle,
   } = props;
 
   const [isMenuVisible, setIsMenuVisible] = React.useState(false);
@@ -56,6 +58,7 @@ export const ZettelCard: React.FC<ZettelCardProps> = (props) => {
         <ZettelCardHeader
           uniqueId={uniqueId}
           title={title}
+          headerStyle={headerStyle}
           {...cardHeaderProps}
         >
           {cardHeaderChildren && (
@@ -73,7 +76,7 @@ export const ZettelCard: React.FC<ZettelCardProps> = (props) => {
       <div className="zettelCardContent" style={contentStyle}>
         {children}
       </div>
-      <ZettelCardFooter {...cardFooterProps}>
+      <ZettelCardFooter {...cardFooterProps} footerStyle={footerStyle}>
         {cardFooterChildren && (
           <span>
             {cardFooterChildren.map((el, index) => (
