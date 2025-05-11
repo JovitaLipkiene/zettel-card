@@ -41,6 +41,10 @@
   text-align: left;
 }
 
+.zettelCardFooter {
+  text-align: left;
+}
+
 .zettelCardMenu {
   min-width: 30px;
   border: 1px solid #ccc;

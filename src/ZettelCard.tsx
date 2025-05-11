@@ -1,8 +1,10 @@
 import * as React from "react";
 import {
   ZettelCardHeader,
+  ZettelCardFooter,
   ZettelCardMenu,
   ZettelCardHeaderProps,
+  ZettelCardFooterProps,
   ZettelCardMenuProps,
 } from "./components";
 import "./ZettelCard.css";
@@ -13,10 +15,13 @@ export interface ZettelCardProps {
   cardContainerStyle?: React.CSSProperties;
   headerStyle?: React.CSSProperties;
   contentStyle?: React.CSSProperties;
+  footerStyle?: React.CSSProperties;
   children?: React.ReactNode;
   cardHeaderChildren?: React.ReactNode[];
+  cardFooterChildren?: React.ReactNode[];
   cardMenuChildren?: React.ReactNode[];
   cardHeaderProps?: ZettelCardHeaderProps;
+  cardFooterProps?: ZettelCardFooterProps;
   cardMenuProps?: ZettelCardMenuProps;
 }
 
@@ -28,8 +33,10 @@ export const ZettelCard: React.FC<ZettelCardProps> = (props) => {
     children,
     cardHeaderChildren,
     contentStyle,
+    cardFooterChildren,
     cardMenuChildren,
     cardHeaderProps,
+    cardFooterProps,
     cardMenuProps,
   } = props;
 
@@ -66,6 +73,15 @@ export const ZettelCard: React.FC<ZettelCardProps> = (props) => {
       <div className="zettelCardContent" style={contentStyle}>
         {children}
       </div>
+      <ZettelCardFooter {...cardFooterProps}>
+        {cardFooterChildren && (
+          <span>
+            {cardFooterChildren.map((el, index) => (
+              <div key={index}>{el}</div>
+            ))}
+          </span>
+        )}
+      </ZettelCardFooter>
       <ZettelCardMenu isVisible={isMenuVisible} {...cardMenuProps}>
         {cardMenuChildren && (
           <>
